@@ -3,6 +3,8 @@ from pypdf import PdfReader
 from embed import embed_text, model
 import faiss
 from groq import Groq
+import streamlit as st
+api_key = st.secrets["GROQ_API_KEY"]
 
 def load_docs(folder_path="data"):
     all_docs = []
@@ -91,7 +93,7 @@ def retrieve(query, index, chunked_docs, model, k=5):
 
     return results
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=api_key)
 
 def generate_answer(query, retrieved_docs):
     context = "\n\n".join([f"[Source: {doc['source']}]\n{doc['text']}" for doc in retrieved_docs])
