@@ -1,0 +1,4 @@
+AI requires Python, machine learning, and deep learning.
+RPA developers can transition into AI by learning Python and ML.
+Vector databases are used in RAG systems for retrieval.
+Streaming improves user experience in AI applications.
